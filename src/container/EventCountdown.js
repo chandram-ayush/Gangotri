@@ -1,39 +1,40 @@
 import React, { useState, useEffect } from 'react';
-import { Button, createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core';
+import { Button, createTheme, ThemeProvider, styled } from '@mui/material';
 
-const theme = createMuiTheme({
-  overrides: {
+// Create a theme using Material UI v5
+const theme = createTheme({
+  components: {
     MuiButton: {
-      root: {
-        backgroundColor: 'goldenrod',
-        color: 'black',
-        padding: '10px 20px',
-        border: 'none',
-        borderRadius: '5px',
-        cursor: 'pointer',
-        '&:hover': {
+      styleOverrides: {
+        root: {
           backgroundColor: 'goldenrod',
+          color: 'black',
+          padding: '10px 20px',
+          border: 'none',
+          borderRadius: '5px',
+          cursor: 'pointer',
+          '&:hover': {
+            backgroundColor: 'goldenrod',
+          },
         },
       },
     },
   },
 });
 
-const useStyles = makeStyles({
-  timer: {
-    fontSize: '24px',
-    margin: '20px 0',
-    color: 'black',
-    textAlign: 'center',
-    backgroundColor: 'orange', // Background color for the box
-    padding: '20px', // Padding inside the box
-    borderRadius: '10px', // Rounded corners
-    boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)', // Optional shadow for a more polished look
-  },
+// Styled component for the timer
+const TimerBox = styled('div')({
+  fontSize: '24px',
+  margin: '20px 0',
+  color: 'black',
+  textAlign: 'center',
+  backgroundColor: 'orange', // Background color for the box
+  padding: '20px', // Padding inside the box
+  borderRadius: '10px', // Rounded corners
+  boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)', // Optional shadow for a more polished look
 });
 
 const CountdownTimer = ({ eventDate }) => {
-  const classes = useStyles();
   const calculateTimeLeft = () => {
     const difference = +new Date(eventDate) - +new Date();
     let timeLeft = {};
@@ -74,9 +75,9 @@ const CountdownTimer = ({ eventDate }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className={classes.timer}>
+      <TimerBox>
         {timerComponents.length ? timerComponents : <span>Event has started!</span>}
-      </div>
+      </TimerBox>
     </ThemeProvider>
   );
 };
