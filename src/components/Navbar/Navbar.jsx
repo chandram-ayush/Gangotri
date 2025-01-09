@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { MdClose } from "react-icons/md";
+import { MdClose } from 'react-icons/md';
 import './Navbar.css';
 import images from '../../constants/images';
-import PdfButton from '../../container/pdfbutton';
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -13,27 +12,23 @@ const Navbar = () => {
   };
 
   return (
-    <div className='app__navbar'>
+    <nav className='app__navbar'>
       <div className='app__navbar-logo'>
-        <img src={images.mayur} alt='app_logo' />
+        <img src={images.ikslogo} alt='app_logo' />
       </div>
       <ul className='app__navbar-links'>
         <li className='p__opensans'>
           <a href='#home'>Home</a>
         </li>
         <li className='p__opensans'>
-          <a href='#gallery'>Products</a>
+          <a href='#gallery'>Events</a>
         </li>
         <li className='p__opensans'>
-          <a href='#about'>About Us</a>
+          <a href='#aboutus'>About Us</a>
         </li>
         <li className='p__opensans'>
           <a href='#contact'>Contact Us</a>
         </li>
-        <li className='p__opensans'>
-          <PdfButton />
-        </li>
-        
       </ul>
 
       <div className='app__navbar-smallscreen'>
@@ -54,12 +49,12 @@ const Navbar = () => {
               </li>
               <li className='p__opensans'>
                 <a href='#gallery' onClick={handleMenuClick}>
-                  Products
+                  Events
                 </a>
               </li>
               <li className='p__opensans'>
                 <a href='#about' onClick={handleMenuClick}>
-                  About Us
+                  About us
                 </a>
               </li>
               <li className='p__opensans'>
@@ -67,14 +62,11 @@ const Navbar = () => {
                   Contact Us
                 </a>
               </li>
-              <li className='p__opensans'>
-                <PdfButton />
-              </li>
             </ul>
           </div>
         )}
       </div>
-    </div>
+    </nav>
   );
 };
 

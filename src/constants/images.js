@@ -38,6 +38,17 @@ import d3 from '../assets/d3.jpeg';
 import cb1 from '../assets/cb1.jpeg';
 import cb2 from '../assets/cb2.jpeg';
 import s1 from '../assets/s1.jpeg';
+import gangotri from '../assets/gangotri (2).png'
+import ikslogo from '../assets/ikslogo.png'
+import gangotrilogo from '../assets/1.png'
+import e1 from '../assets/e1.png'
+import e2 from '../assets/e2.png'
+import e3 from '../assets/e3.png'
+import e4 from '../assets/e4.png'
+import e5 from '../assets/e5.png'
+import e6 from '../assets/e6.png'
+import iksposter from '../assets/iksposter.png'
+
 
 
 export default {
@@ -80,4 +91,14 @@ export default {
   c2,
   c3,
   s1,
+  gangotri,
+  ikslogo,
+  gangotrilogo,
+  e1,
+  e2,
+  e3,
+  e4,
+  e5,
+  e6,
+  iksposter,
 };

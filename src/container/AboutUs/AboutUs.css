@@ -1,65 +1,58 @@
-.app__aboutus {
-  position: relative;
+.app__header{
+  background: linear-gradient(to right, #c4e3f0, #64b3e0); /* Added gradient background */ 
 }
-.app__aboutus-overlay {
-  position: absolute;
-  inset: 0;
+.app__header-h1{
+
+  color:var(--color-black);
+  letter-spacing:0.04em;
+  line-height: 100px;
+  font-size: 60px;
+
 }
-.app__aboutus-overlay img {
-  width: 391px;
-  height: 415px;
-  z-index: 0;
-}
-.app__aboutus-content {
-  width: 100%;
-  z-index: 2;
-}
-.app__aboutus-content_about {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
-.app__aboutus-content_knife {
-  margin: 2rem 4rem;
-}
-.app__aboutus-content_history {
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
+.app__header-h2{
+  font-family: var(--font-base);
+  color:var(--color-black);
+  letter-spacing:0.04em;
+  line-height: 100px;
+  font-size: 80px;
+
 }
 
-.app__aboutus-content_history p,
-.app__aboutus-content_about p {
-  margin: 2rem 0;
-  color: var(--color-black);
+.app__header-img img{
+  width:80%;
+  
 }
-@media screen and (max-width: 2000px) {
-  .app__aboutus-content_knife img {
-    height: 550px;
-  }
-  .app__aboutus-content_about p,
-  .app__aboutus-content_history p {
-    margin: 4rem 0;
+
+@media screen and (min-width: 2000px) {
+  .app__header-h1 {
+      font-size: 180px;
+      line-height: 210px;
   }
 }
 
-@media screen and (max-width: 950px) {
-  .app__aboutus-content {
-    flex-direction: column;
-  }
-  .app__aboutus-content_knife {
-    margin: 4rem 0;
+@media screen and (max-width: 1150px) {
+  .app__header-h1 {
+      font-size: 90px;
   }
 }
+
 @media screen and (max-width: 650px) {
-  .app__aboutus-overlay img {
-    width: 80%;
-    height: 320px;
+  .app__header-h1 {
+      font-size: 70px;
+      line-height: 87px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .app__header-h1 {
+      font-size: 50px;
+      line-height: 70px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .app__header-h2 {
+      font-size: 50px;
+      line-height: 70px;
   }
 }

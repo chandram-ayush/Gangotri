@@ -1,20 +1,20 @@
 .app__header{
-   background-color: var(--color-green); 
+    background: linear-gradient(to right, #c4e3f0, #64b3e0); /* Added gradient background */ 
 }
 .app__header-h1{
 
     color:var(--color-black);
     letter-spacing:0.04em;
-    line-height: 117px;
-    font-size: 90px;
+    line-height: 100px;
+    font-size: 60px;
 
 }
 .app__header-h2{
     font-family: var(--font-base);
     color:var(--color-black);
     letter-spacing:0.04em;
-    line-height: 117px;
-    font-size: 90px;
+    line-height: 100px;
+    font-size: 80px;
 
 }
 

@@ -1,7 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core';
-import clsx from 'clsx';
-import Pdf from '../assets/Product_Details.pdf'; // Import the PDF file
 
 const theme = createMuiTheme({
   overrides: {
@@ -22,38 +20,68 @@ const theme = createMuiTheme({
 });
 
 const useStyles = makeStyles({
-  blinking: {
-    animation: '$blink 1s infinite',
-  },
-  '@keyframes blink': {
-    '0%': { opacity: 1 },
-    '50%': { opacity: 0 },
-    '100%': { opacity: 1 },
+  timer: {
+    fontSize: '24px',
+    margin: '20px 0',
+    color: 'black',
+    textAlign: 'center',
   },
 });
 
-const PdfButton = () => {
+const CountdownTimer = ({ eventDate }) => {
   const classes = useStyles();
+  const calculateTimeLeft = () => {
+    const difference = +new Date(eventDate) - +new Date();
+    let timeLeft = {};
 
-  const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = Pdf;
-    link.download = 'Product_Details.pdf'; // Set the download attribute to specify the filename
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.click();
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    }
+
+    return timeLeft;
   };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const timerComponents = [];
+
+  Object.keys(timeLeft).forEach((interval) => {
+    if (timeLeft[interval]) {
+      timerComponents.push(
+        <span key={interval}>
+          {timeLeft[interval]} {interval}{" "}
+        </span>
+      );
+    }
+  });
 
   return (
     <ThemeProvider theme={theme}>
-      <Button
-        className={clsx(classes.blinking)}
-        onClick={handleDownload}
-      >
-        Download Catalog
-      </Button>
+      <div className={classes.timer}>
+        {timerComponents.length ? timerComponents : <span>Event has started!</span>}
+      </div>
     </ThemeProvider>
   );
 };
 
-export default PdfButton;
+const EventCountdown = () => (
+  <div>
+    <h1>Countdown to Gangotri</h1>
+    <CountdownTimer eventDate="2025-01-27T00:00:00" />
+  </div>
+);
+
+export default EventCountdown;

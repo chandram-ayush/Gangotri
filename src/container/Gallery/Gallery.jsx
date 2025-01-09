@@ -19,7 +19,7 @@ const Gallery = () => {
       current.scrollLeft += 300;
     }
   };
-  const galleryImages=[images.w1,images.w3,images.w4,images.cb1,images.cb2,images.d2,images.c2,images.s1]
+  const galleryImages=[images.e6,images.e5,images.e4,images.e3,images.e2,images.e1]
 
 
 
@@ -27,8 +27,8 @@ const Gallery = () => {
   <div className='app__gallery flex__center' id="gallery">
 
     <div className='app__gallery-content'>
-      <h1 className='headtext__cormorant'>Photo Gallery</h1>
-      <p className='p__opensans' style={{ margin: "1rem 0", fontFamily: "Arial", color: "white", fontSize: "20px"}}>Discover our products gallery featuring top-quality aluminium doors, windows, and partitions, meticulously crafted to complement modern architectural styles, including our renowned Zindal series.
+      <h1 className='headtext__cormorant'>Events</h1>
+      <p className='p__opensans' style={{ margin: "1rem 0", fontFamily: "Arial", color: "white", fontSize: "20px"}}>Gangotri 1.0, hosted by the IKS Society at IIEST Shibpur, is a grand celebration of India's rich cultural heritage. The event features thematic book stalls, manuscript displays, and workshops on ancient Indian scripts. Engaging activities include storytelling sessions, quizzes, VR experiences of historical sites, and eco-friendly initiatives. Notable competitions like "Chakravhyu," a treasure hunt rooted in Indian history, "Nibandh," an essay contest on cultural themes, "Slok," a Sanskrit recitation event, and "Shatranj," a chess tournament, invite participants to delve into India's intellectual legacy. Gangotri 1.0 aims to inspire and connect the past with the future.
 
 
 
